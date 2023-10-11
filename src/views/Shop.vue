@@ -42,9 +42,6 @@
   cursor: pointer;
   border: 1px solid dimgray;
 }
-.list > .block:hover {
-  box-shadow: 0px 0px 5px 0px dimgray;
-}
 
 .container > .header {
   width: 100%;
@@ -60,13 +57,20 @@
   cursor: pointer;
   padding: 3px;
 }
-.option > div:hover {
-  color: #e0e0e0;
-}
 .option > div:nth-child(1) {
   margin-right: 5px;
 }
 .option > div:nth-child(2) {
   margin-left: 5px;
+}
+
+@media (hover:hover) {
+  .list > .block:hover {
+    box-shadow: 0px 0px 5px 0px dimgray;
+  }
+  
+  .option > div:hover {
+    color: #e0e0e0;
+  }
 }
 </style>

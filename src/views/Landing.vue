@@ -25,7 +25,10 @@
   border: 1px solid dimgray;
   border-radius: 5px;
 }
-.container > .block:hover {
-  box-shadow: 0px 0px 5px 0px dimgray;
+
+@media (hover:hover) {
+  .container > .block:hover {
+    box-shadow: 0px 0px 5px 0px dimgray;
+  }
 }
 </style>

@@ -63,7 +63,10 @@
   justify-content: center;
   padding: 15px 0px;
 }
-.header > .block:hover {
-  background-color: #e0e0e0;
+
+@media (hover:hover) {
+  .header > .block:hover {
+    background-color: #e0e0e0;
+  }
 }
 </style>
