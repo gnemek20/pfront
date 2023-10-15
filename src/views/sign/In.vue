@@ -5,19 +5,29 @@
         <div class="logo">
           <h1>NIHIL</h1>
         </div>
-        <div class="sign">
+        <div class="sign" @keypress.enter="clickSignIn">
           <div class="id">
             <input type="text">
           </div>
           <div class="pwd">
             <input type="password">
           </div>
-          <button>로그인</button>
+          <button ref="signIn" @click="$push('/shop')">로그인</button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    clickSignIn() {
+      this.$refs['signIn'].click();
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .container {
