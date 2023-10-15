@@ -26,7 +26,15 @@
   border-radius: 5px;
 }
 
-.container > .block:hover {
-  box-shadow: 0px 0px 5px 0px dimgray;
+@media (hover:hover) {
+  .container > .block:hover {
+    box-shadow: 0px 0px 5px 0px dimgray;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: fill-available;
+  }
 }
 </style>

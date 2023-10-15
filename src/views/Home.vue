@@ -10,7 +10,7 @@
       <div class="block">
         <h3>EPISODE</h3>
       </div>
-      <div class="block">
+      <div class="block" @click="$push('/shop')">
         <h3>SHOP</h3>
       </div>
     </div>
@@ -44,10 +44,7 @@
   align-items: center;
   width: 50px;
   height: 50px;
-}
-
-.container > .block:hover {
-  animation: rotate 3s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 
 .container > .header {
@@ -56,19 +53,26 @@
   left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
   width: 100%;
   max-width: 1600px;
 }
-
 .header > .block {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 15px 5px;
+  padding: 15px 0px;
 }
 
-.header > .block:hover {
-  background-color: #e0e0e0;
+@media (hover:hover) {
+  .header > .block:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: fill-available;
+  }
 }
 </style>
