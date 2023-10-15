@@ -69,4 +69,10 @@
     background-color: #e0e0e0;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: fill-available;
+  }
+}
 </style>
