@@ -17,6 +17,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      product_num: this.$route.query['num'],
+      imp_status: this.$route.query['imp_success']
+    }
+  },
+  created() {
+    if (this.imp_status === 'true') {
+      this.$push('/shop/complete');
+    }
+  },
   methods: {
     purchase() {
       const imp = window.IMP;
@@ -32,13 +43,10 @@ export default {
         buyer_tel: '010-1234-5678',
         buyer_addr: '서울특별시 강남구 삼성동',
         buyer_postcode: '123-456',
-        m_redirect_url: 'http://pfront.kro.kr/shop/product?num=1'
+        m_redirect_url: `http://pfront.kro.kr/shop/product?num=${this.product_num}`
       }, (result) => {
         if (result.success) {
-          console.log('good');
-        }
-        else {
-          console.log('oh my god');
+          this.$push('/shop/complete');
         }
       });
     }
