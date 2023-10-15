@@ -111,4 +111,13 @@
     color: #e0e0e0;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .container > .top {
+    grid-template-columns: 1fr 2fr;
+  }
+  .top > .searchBox {
+    margin-right: 20px;
+  }
+}
 </style>
