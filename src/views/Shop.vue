@@ -12,7 +12,9 @@
     </div>
     <div class="top">
       <div class="logo">
-        <h1>NIHIL</h1>
+        <div class="block" @click="$push('/home')">
+          <h1>NIHIL</h1>
+        </div>
       </div>
       <div class="searchBox">
         <input type="text" placeholder="검색어를 입력해주세요.">
@@ -43,6 +45,10 @@
 .top > .logo {
   display: flex;
   justify-content: center;
+}
+.logo > .block {
+  cursor: pointer;
+  display: flex;
 }
 .top > .searchBox {
   display: flex;
