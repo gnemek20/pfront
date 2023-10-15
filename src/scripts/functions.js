@@ -4,6 +4,7 @@ export default {
   install(Vue) {
     Vue.prototype.$push = functions.push;
     Vue.prototype.$reload = functions.reload;
+    Vue.prototype.$query = functions.query;
   }
 }
 
@@ -13,5 +14,8 @@ export const functions = {
   },
   reload: () => {
     return router.go();
+  },
+  query: (location, query) => {
+    return router.push({ path: location, query: query }).catch(() => {});
   }
 }
