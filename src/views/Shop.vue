@@ -10,6 +10,14 @@
         </div>
       </div>
     </div>
+    <div class="top">
+      <div class="logo">
+        <h1>NIHIL</h1>
+      </div>
+      <div class="searchBox">
+        <input type="text" placeholder="검색어를 입력해주세요.">
+      </div>
+    </div>
     <div class="products">
       <div class="list">
         <div class="block" v-for="index in 10" v-bind:key="index">
@@ -24,6 +32,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container > .top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 1600px;
+}
+.top > .logo {
+  display: flex;
+  justify-content: center;
+}
+.top > .searchBox {
+  display: flex;
+  border: 1px solid dimgray;
+  border-radius: 5px;
+}
+.searchBox > input {
+  outline: none;
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 .container > .products {
