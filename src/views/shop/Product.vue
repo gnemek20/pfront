@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="header">
-
-    </div>
     <div class="block">
       <div class="product">
       </div>
@@ -31,11 +28,10 @@ export default {
   methods: {
     purchase() {
       const imp = window.IMP;
-      imp.init('iamport');
+      imp.init('imp42823705');
       imp.request_pay({
-        pg: 'html5_inicis.',
+        pg: 'html5_inicis.INIpayTest',
         pay_method: 'card',
-        merchant_uid: 'merchant_' + new Date().getTime(),
         name: '상품명',
         amount: 1,
         buyer_email: 'test@portone.io',
@@ -44,8 +40,8 @@ export default {
         buyer_addr: '서울특별시 강남구 삼성동',
         buyer_postcode: '123-456',
         m_redirect_url: `http://pfront.kro.kr/shop/product?num=${this.product_num}`
-      }, (result) => {
-        if (result.success) {
+      }, (rsp) => {
+        if (rsp.success) {
           this.$push('/shop/complete');
         }
       });
@@ -62,10 +58,6 @@ export default {
   align-items: center;
   width: 100vw;
   height: 100vh;
-}
-
-.container > .header {
-
 }
 
 .container > .block {
