@@ -32,7 +32,7 @@ export default {
         buyer_tel: '010-1234-5678',
         buyer_addr: '서울특별시 강남구 삼성동',
         buyer_postcode: '123-456',
-        m_redirect_url: 'http://pfront.kro.kr/shop/product?num=1'
+        m_redirect_url: 'http://pfront.kro.kr/shop/complete'
       }, (result) => {
         if (result.success) {
           console.log('good');
