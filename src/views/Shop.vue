@@ -22,7 +22,7 @@
     </div>
     <div class="products">
       <div class="list">
-        <div class="block" v-for="index in 10" v-bind:key="index">
+        <div class="block" v-for="index in 10" v-bind:key="index" @click="$query('/shop/product', {num: index})">
         </div>
       </div>
     </div>
