@@ -7,10 +7,10 @@
         </div>
         <div class="sign" @keypress.enter="clickSignIn">
           <div class="id">
-            <input type="text">
+            <input type="text" ref="id" placeholder="아이디" autofocus>
           </div>
           <div class="pwd">
-            <input type="password">
+            <input type="password" placeholder="비밀번호" ref="pwd">
           </div>
           <button ref="signIn" @click="$push('/shop')">로그인</button>
         </div>
@@ -21,6 +21,9 @@
 
 <script>
 export default {
+  mounted() {
+    this.$refs['id'].focus();
+  },
   methods: {
     clickSignIn() {
       this.$refs['signIn'].click();
