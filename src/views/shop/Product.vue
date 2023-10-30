@@ -4,9 +4,23 @@
       <div class="product">
       </div>
       <div class="option">
-        <h1>NIHIL</h1>
-        <p>설명</p>
-        <button @click="purchase">결제하기</button>
+        <div class="text-area">
+          <div class="name">
+            <h1>상품명</h1>
+          </div>
+          <div class="introduce">
+            <p>가격</p>
+            <p>배송비</p>
+            <p>수량</p>
+          </div>
+        </div>
+        <div class="choice-status">
+          <div class="buttons">
+            <button @click="purchase">구매하기</button>
+            <button>장바구니</button>
+            <button>찜</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -71,13 +85,36 @@ export default {
   display: flex;
   border: 1px solid dimgray;
 }
+.block > .option {
+  display: flex;
+  flex-direction: column;
+}
 
-.option > button {
+
+.option > .text-area {
+  display: flex;
+  flex-direction: column;
+}
+.text-area > .introduce {
+  margin-left: 5px;
+}
+
+.option > .choice-status {
+  margin-top: auto;
+  display: flex;
+}
+.choice-status > .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.buttons > button {
   cursor: pointer;
+  padding: 10px 20px;
   border: 1px solid dimgray;
   border-radius: 3px;
 }
-.option > button:hover {
+.buttons > button:hover {
   background-color: #e0e0e0;
 }
 
@@ -99,7 +136,20 @@ export default {
     border-bottom: 1px solid dimgray;
   }
   .block > .option {
-    padding: 0px 10px;
+    padding: 0px 10px 80px;
+  }
+  .option > .choice-status {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+  }
+  .choice-status > .buttons {
+    padding: 0px 10px 10px;
+  }
+  .buttons > button {
+    padding: 20px 35px;
   }
 }
 </style>
