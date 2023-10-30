@@ -5,19 +5,20 @@
         <div class="sign" @click="$push('/signin')">
           <h5>LOGIN</h5>
         </div>
-        <div class="wish">
+        <div class="wish" @click="$push('/shop/cart')">
           <h5>CART</h5>
         </div>
       </div>
     </div>
     <div class="top">
+      <div class="hamburger">
+        <div class="icon">
+        </div>
+      </div>
       <div class="logo">
         <div class="block" @click="$push('/home')">
           <h1>NIHIL</h1>
         </div>
-      </div>
-      <div class="searchBox">
-        <input type="text" placeholder="검색어를 입력해주세요.">
       </div>
     </div>
     <div class="products">
@@ -42,6 +43,15 @@
   width: 100%;
   max-width: 1600px;
 }
+.top > .hamburger {
+  display: flex;
+}
+.top > .icon {
+  display: flex;
+}
+.icon > img {
+  object-fit: none;
+}
 .top > .logo {
   display: flex;
   justify-content: center;
@@ -49,19 +59,6 @@
 .logo > .block {
   cursor: pointer;
   display: flex;
-}
-.top > .searchBox {
-  display: flex;
-  border: 1px solid dimgray;
-  border-radius: 5px;
-}
-.searchBox > input {
-  outline: none;
-  width: 100%;
-  padding: 14px;
-  border: 0;
-  border-radius: 5px;
-  font-size: 15px;
 }
 
 .container > .products {
@@ -115,9 +112,6 @@
 @media screen and (max-width: 700px) {
   .container > .top {
     grid-template-columns: 1fr 2fr;
-  }
-  .top > .searchBox {
-    margin-right: 20px;
   }
 }
 </style>
