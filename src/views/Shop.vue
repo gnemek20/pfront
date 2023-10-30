@@ -38,8 +38,8 @@
 }
 
 .container > .top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
   width: 100%;
   max-width: 1600px;
 }
@@ -106,12 +106,6 @@
   
   .option > div:hover {
     color: #e0e0e0;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .container > .top {
-    grid-template-columns: 1fr 2fr;
   }
 }
 </style>
